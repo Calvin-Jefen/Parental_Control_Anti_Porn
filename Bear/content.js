@@ -7,20 +7,25 @@
 
 const fWords =['bear','animal']
 var tmp = 0
+var words = "";
 
 for (let i = 0; i< fWords.length; i++) {
     // const element = array[index];
     const re = new RegExp(fWords[i],'gi')
 
     const matches = document.documentElement.innerHTML.match(re)
-    if(matches.length > 0){
-        tmp += matches.length 
-    }
+    tmp = 0;
+    tmp += matches.length
+    // words = {
+    //     "word" : fWords[i],
+    //     "total" : tmp
+    // };
     // tmp = 0
+    words += fWords[i]+tmp+"|"
 }
 
 chrome.runtime.sendMessage ({
     url: window.location.href,
-    count : tmp
+    count : words 
 })
 
