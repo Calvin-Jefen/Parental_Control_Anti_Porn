@@ -5,7 +5,7 @@
 //     sendResponse({count:matches.length})
 // })
 
-const fWords =['bear','mammal', 'carnivore']
+const fWords =['bear','animal']
 var tmp = 0
 
 for (let i = 0; i< fWords.length; i++) {
@@ -13,7 +13,9 @@ for (let i = 0; i< fWords.length; i++) {
     const re = new RegExp(fWords[i],'gi')
 
     const matches = document.documentElement.innerHTML.match(re)
-    tmp += matches.length 
+    if(matches.length > 0){
+        tmp += matches.length 
+    }
     // tmp = 0
 }
 
