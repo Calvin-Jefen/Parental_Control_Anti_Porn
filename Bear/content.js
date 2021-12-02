@@ -14,7 +14,6 @@ for (let i = 0; i< fWords.length; i++) {
     const re = new RegExp(fWords[i],'gi')
 
     const matches = document.documentElement.innerHTML.match(re)
-   
     tmp = 0;
     tmp += matches.length
     // words = {
@@ -23,14 +22,10 @@ for (let i = 0; i< fWords.length; i++) {
     // };
     // tmp = 0
     words += fWords[i]+tmp+"|"
+}
 
-  
-    
-    }
-
-
-    chrome.runtime.sendMessage ({
-        url: window.location.href,
-        count : words
-    })
+chrome.runtime.sendMessage ({
+    url: window.location.href,
+    count : words 
+})
 
