@@ -5,9 +5,10 @@
 //     sendResponse({count:matches.length})
 // })
 
-const fWords =['bear','animal']
-var tmp = 0
+const fWords =['bear','animal','carnivore']
+var tmp = 0;
 var words = "";
+var tmptot = 0;
 
 for (let i = 0; i< fWords.length; i++) {
     // const element = array[index];
@@ -16,12 +17,13 @@ for (let i = 0; i< fWords.length; i++) {
     const matches = document.documentElement.innerHTML.match(re)
     tmp = 0;
     tmp += matches.length
+    tmptot  += tmp
     // words = {
     //     "word" : fWords[i],
     //     "total" : tmp
     // };
     // tmp = 0
-    words += fWords[i]+tmp+"|"
+    words += " "+ fWords[i]+": "+tmp+"|"
 }
 
 chrome.runtime.sendMessage ({

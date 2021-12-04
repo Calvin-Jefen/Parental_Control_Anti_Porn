@@ -19,7 +19,6 @@ function checkempty(){
 }
 
 
-
 document.getElementById("btn-add").onclick= function() {addline()}
 
 function addline(){
@@ -28,36 +27,29 @@ function addline(){
     // // console.log(inptext)
     // document.getElementById("inp-text").value ="";
 
-    var tab = document.getElementById("tabarea")
+    // var tab = document.getElementById("tabarea")
 
-        var newchk = document.createElement('input');
-        newchk.setAttribute('type', 'checkbox');
-        newchk.setAttribute('class', 'form-check-input');
-        var newbtn= document.createElement('button');
-        newbtn.setAttribute('class', 'btn btn-dark');
-        newbtn.setAttribute('id', 'btn');
+    //     var newchk = document.createElement('input');
+    //     newchk.setAttribute('type', 'checkbox');
+    //     newchk.setAttribute('class', 'form-check-input');
+    //     var newbtn= document.createElement('button');
+    //     newbtn.setAttribute('class', 'btn btn-dark');
+    //     newbtn.setAttribute('id', 'btn');
 
-        var newTd = document.createElement('td');
-        var newTd2 = document.createElement('td');
-        newTd2.setAttribute=('id','text')
-        var newTd3 = document.createElement('td');
-        var newTr = document.createElement('tr');
-        newTd.appendChild(newchk);
-        newTd.appendChild(newchk);
-        newTd.appendChild(newchk);
-        newTr.appendChild(newTd,newTd2,newTd3);
+    //     var newTd = document.createElement('td');
+    //     var newTd2 = document.createElement('td');
+    //     newTd2.setAttribute=('id','text')
+    //     var newTd3 = document.createElement('td');
+    //     var newTr = document.createElement('tr');
+    //     newTd.appendChild(newchk);
+    //     newTd.appendChild(newchk);
+    //     newTd.appendChild(newchk);
+    //     newTr.appendChild(newTd,newTd2,newTd3);
     
         
     
-        tab.appendChild(newTr);  
+    //     tab.appendChild(newTr);  
 }
-
-
-
-
-
-
-
 
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -69,8 +61,8 @@ document.addEventListener('DOMContentLoaded', function(){
     //     document.body.appendChild(div)
     // })
     const bg = chrome.extension.getBackgroundPage()
-    Object.keys(bg.bears).forEach(function (url) {
-        let totalWords = bg.bears[url];
+    Object.keys(bg.PCAP).forEach(function (url) {
+        let totalWords = bg.PCAP[url];
         var word = totalWords.split("|");
         
         // word.forEach(element => {
@@ -78,7 +70,25 @@ document.addEventListener('DOMContentLoaded', function(){
         // });
 
         // alert(word)
-        console.log(url +" "+word)
+        //console.log(url +" "+word)
+        // var repcont ="The url : "+ url +",the word found + count : "+ word
+
+        fetch('http://localhost/report_api/api/report', {
+            method: 'POST',
+            headers: {
+                'keyapipenjualan':'p3nju4l4n',
+                'content-type': 'application/json',
+                authorization: 'Bearer 123abc456def'
+            },
+            body: JSON.stringify({report : repcont })
+        })
+            .then(response => {
+                console.log(response)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+
     })
     
 // const bg = chrome.extension.getBackgroundPage()

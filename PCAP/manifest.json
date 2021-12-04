@@ -1,5 +1,5 @@
 {
-    "name":"bear",
+    "name":"PCAP",
     "version":"1.0",
     "manifest_version": 2,
     "content_scripts": [
@@ -9,7 +9,7 @@
         }
     ],
     "browser_action":{
-        "default_title":"BEAR",
+        "default_title":"PCAP",
         "default_popup":"popup.html"
     },
     "background":{

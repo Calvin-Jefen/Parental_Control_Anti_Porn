@@ -1,6 +1,6 @@
-window.bears = {}
+window.PCAP = {}
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    window.bears[request.url] = request.count
+    window.PCAP[request.url] = request.count
 }) 
 
 // chrome.browserAction.onClicked.addListener(function(tab){
