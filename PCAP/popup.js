@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         // alert(word)
         //console.log(url +" "+word)
-        // var repcont ="The url : "+ url +",the word found + count : "+ word
+        var repcont ="The url : "+ url +",the word found + count : "+ word
 
         fetch('http://localhost/report_api/api/report', {
             method: 'POST',
