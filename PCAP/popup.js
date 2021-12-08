@@ -60,36 +60,36 @@ document.addEventListener('DOMContentLoaded', function(){
     //     div.textContent = `${url}: The word found is  ${bg.bears[url]}`
     //     document.body.appendChild(div)
     // })
-    const bg = chrome.extension.getBackgroundPage()
-    Object.keys(bg.PCAP).forEach(function (url) {
-        let totalWords = bg.PCAP[url];
-        var word = totalWords.split("|");
+    // const bg = chrome.extension.getBackgroundPage()
+    // Object.keys(bg.PCAP).forEach(function (url) {
+    //     let totalWords = bg.PCAP[url];
+    //     var word = totalWords.split("|");
         
-        // word.forEach(element => {
-        //     var words = Object.assign(element)
-        // });
+    //     // word.forEach(element => {
+    //     //     var words = Object.assign(element)
+    //     // });
 
-        // alert(word)
-        //console.log(url +" "+word)
-        var repcont ="The url : "+ url +",the word found + count : "+ word
+    //     // alert(word)
+    //     //console.log(url +" "+word)
+    //     var repcont ="The url : "+ url +",the word found + count : "+ word
 
-        fetch('http://localhost/report_api/api/report', {
-            method: 'POST',
-            headers: {
-                'keyapipenjualan':'p3nju4l4n',
-                'content-type': 'application/json',
-                authorization: 'Bearer 123abc456def'
-            },
-            body: JSON.stringify({report : repcont })
-        })
-            .then(response => {
-                console.log(response)
-            })
-            .catch(err => {
-                console.log(err)
-            })
+    //     fetch('http://localhost/report_api/api/report', {
+    //         method: 'POST',
+    //         headers: {
+    //             'keyapipenjualan':'p3nju4l4n',
+    //             'content-type': 'application/json',
+    //             authorization: 'Bearer 123abc456def'
+    //         },
+    //         body: JSON.stringify({report : repcont })
+    //     })
+    //         .then(response => {
+    //             console.log(response)
+    //         })
+    //         .catch(err => {
+    //             console.log(err)
+    //         })
 
-    })
+    // })
     
 // const bg = chrome.extension.getBackgroundPage()
 // Object.key(bg.bears).forEach(function(url) {
