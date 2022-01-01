@@ -50,6 +50,7 @@ function addline(){
     
     //     tab.appendChild(newTr);  
 }
+    
 
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -112,3 +113,15 @@ document.addEventListener('DOMContentLoaded', function(){
     //     document.body.appendChild(div)
 //     // }
 }, false)
+
+
+// document.querySelector('#btn-sign-in').addEventListener('click', function(){
+//     chrome.runtime.sendMessage({message: 'signout'}, function(response){
+//         if(response ==='success')window.close();
+//     });
+// })
+// document.querySelector('#btn-stat').addEventListener('click', function(){
+//     chrome.runtime.sendMessage({message: 'isUserSignedIn'}, function(response){
+//         alert(response);
+//     });
+// })
