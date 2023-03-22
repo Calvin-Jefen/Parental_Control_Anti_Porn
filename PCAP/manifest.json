@@ -1,5 +1,36 @@
 {
     "name":"PCAP",
     "version":"1.0",
-    "manifest_version":2
+    "manifest_version": 2,
+    "icons":{
+        "32" : "./Shield-32.png",
+        "48" : "./Shield-48.png",
+        "128" : "./Shield-128.png"
+    },
+    "key" :"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDCuGglK43iAz3J9BEYK/Mz6ZhloIMMDqQSAaf3vJt4eHbTbSDsu4WdQ9dQDRcKlg8nwQdePBt0C3PSUBtiSNSS37Z3qEGfS7LCju3h6pI1Yr9MQtxw+jUa7kXXIS09VV73pEFUT/F7c6Qe8L5ZxgAcBvXBh1Fie63qb02I9XQ/CQIDAQAB",
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+    "browser_action":{
+        "default_title":"PCAP"
+    },
+    "background":{
+        "scripts": [   
+            "background.js",
+            "jsrsasign-all-min.js"
+        ]
+    },
+    "permissions": [
+        "tabs",
+        "identity",
+        "identity.email",
+        "storage",
+        "contentSettings"
+    ],
+
+    "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js; object-src 'self';"
 }
+
