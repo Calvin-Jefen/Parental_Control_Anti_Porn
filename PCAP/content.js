@@ -57,7 +57,7 @@ var matches = 0;
         
         function block(){
             document.body.innerHTML = `<div class="container" style=" width :100%; height:100%; background-color: rgba(255, 255, 255, .15);  
-            backdrop-filter: blur(5px);"><div>` ;
+            backdrop-filter: blur(5px);">THE WEBSITE IS BLOCKED <div>` ;
         }
         
         })

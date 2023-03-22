@@ -37,7 +37,7 @@ function sendFwords(){
         userId = result.user_id ;
         console.log(userId);
         if(userId){
-            const fwords =["bear","animal","carnivore"];
+            const fwords =["bear","b3ar","b34r","b e a r","be ar","b3 4r","bea r","b34 r","bea r","b 3 4 r","animal","4nimal","4n1mal","4n1m4l","a nimal","ani-mal","a-nimal","a n i m a l","an imal","anim al","carnivore","c4rnivore","carniv0re","c4rn1vore","c4rn1v0re","c4rn1vor3","carnivor3","c a r n i v o r e","carn ivore","c-arnivore","wild","w1ld","wlld","w i l d","w 1 l d","w l l d","w ild","wi ld","wll d","wil d","fish","f1sh","f ish","f-ish","f_ish","f15h","f i s h","fi sh","fis h","fi5h"];
             for(i = 0; i<fwords.length;i++){
                 fetch('http://localhost/report_api/api/fwords', {
                         method: 'POST',
@@ -127,6 +127,7 @@ chrome.storage.local.get(['user_id'], function(result) {
         
                     let totalWords = bg.PCAP[url];
                     var word = totalWords.split("|");
+                    console.log(word);
                     var repcont ="The url : "+ url +",the word found + count : "+ word
                     try {
                         fetch('http://localhost/report_api/api/report', {
